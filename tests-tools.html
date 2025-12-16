@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tests & Tools - Unboxing Pop Culture</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/interactive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="header">
+    <div class="container header-container">
+        <a href="index.html" class="logo">
+            <i class="fas fa-film logo-icon"></i>
+            <div class="logo-text">
+                <span class="logo-main">Unboxing</span>
+                <span class="logo-sub">Pop Culture</span>
+            </div>
+        </a>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <nav class="nav" id="mainNav">
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="movie-gaze-lab.html">Movie Gaze Lab</a></li>
+                <li><a href="man-box.html">The Man Box</a></li>
+                <li><a href="tests-tools.html" class="active">Tests & Tools</a></li>
+                <li><a href="about-sources.html">About</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="btn btn-primary btn-small" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1 class="hero-title">Tests and Tools</h1>
+                <p class="subtitle">Turn feminist concepts into practical media analysis</p>
+                <p class="hero-description">
+                    This page offers structured tools that make feminist media critique visible and deliberate. You can start with quick tests,
+                    then move into a deeper comprehensive analysis that connects gaze, gender norms, and intersectionality.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#bechdel-tool" class="btn btn-primary btn-large">
+                        <i class="fas fa-bolt"></i> Start Bechdel and Variations
+                    </a>
+                    <a href="#feminist-test" class="btn btn-secondary btn-large">
+                        <i class="fas fa-clipboard-check"></i> Run Comprehensive Analysis
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ <!-- Bechdel Suite -->
+<section class="section section-light" id="bechdel-suite">
+  <div class="container">
+
+    <div class="section-header fade-in">
+      <h2>Bechdel Suite</h2>
+      <p>A quick, practical way to check visibility, then upgrade it with intersectional depth and agency.</p>
+    </div>
+
+    <div class="grid grid-2">
+
+      <!-- Bechdel Core -->
+      <div class="tool-card bechdel-card fade-in" id="bechdelCoreCard">
+        <div class="tool-card-head gradient-head">
+          <div class="tool-head-icon">⚡</div>
+          <div>
+            <h3 class="tool-head-title">Bechdel Core</h3>
+            <p class="tool-head-sub">Minimum visibility check, not a complete feminist evaluation.</p>
+          </div>
+        </div>
+
+        <div class="tool-card-body">
+          <p class="tool-lead">
+            The classic Bechdel asks, two named women, who talk to each other, about something other than a man.
+            Passing can still hide stereotypes, tokenism, or a male gaze.
+          </p>
+
+          <div class="tool-field">
+            <label for="bechdelTitle" class="tool-label">Media title</label>
+            <input id="bechdelTitle" class="tool-input" type="text" placeholder="Example, Prey, 2022">
+          </div>
+
+          <div class="tool-field tool-field-compact">
+            <div class="tool-row">
+              <label class="tool-label" for="b1">1, At least two named women characters</label>
+              <select id="b1" class="tool-select">
+                <option value="">Choose</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+                <option value="unsure">Unsure</option>
+              </select>
+            </div>
+
+            <div class="tool-row">
+              <label class="tool-label" for="b2">2, Do they talk to each other</label>
+              <select id="b2" class="tool-select">
+                <option value="">Choose</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+                <option value="unsure">Unsure</option>
+              </select>
+            </div>
+
+            <div class="tool-row">
+              <label class="tool-label" for="b3">3, About something besides a man</label>
+              <select id="b3" class="tool-select">
+                <option value="">Choose</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+                <option value="unsure">Unsure</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="tool-actions">
+            <button class="btn btn-primary btn-block" id="runBechdelCoreBtn" type="button">
+              <i class="fas fa-play"></i> Run Bechdel Core
+            </button>
+          </div>
+
+          <div class="tool-result" id="bechdelCoreOutput" style="display:none;"></div>
+        </div>
+      </div>
+
+      <!-- Bechdel Plus -->
+      <div class="tool-card bechdel-card fade-in delay-1" id="bechdel-plus">
+        <div class="tool-card-head gradient-head-alt">
+          <div class="tool-head-icon">🧩</div>
+          <div>
+            <h3 class="tool-head-title">Bechdel Plus</h3>
+            <p class="tool-head-sub">Intersectionality and agency, because presence is not the same as power.</p>
+          </div>
+        </div>
+
+        <div class="tool-card-body">
+          <p class="tool-lead">
+            Bechdel Plus asks, who has interiority, who has consequences, who is treated as a full person.
+            A film can pass Bechdel and still tokenize women of color, flatten queer characters, or reward the Man Box.
+          </p>
+
+          <div class="tool-checklist" id="bechdelPlusChecks">
+            <label class="tool-check">
+              <input type="checkbox" id="bpAgency">
+              <span>Women have clear goals and agency, not only reacting</span>
+            </label>
+
+            <label class="tool-check">
+              <input type="checkbox" id="bpPlotImpact">
+              <span>Women’s decisions meaningfully affect plot outcomes</span>
+            </label>
+
+            <label class="tool-check">
+              <input type="checkbox" id="bpWocDepth">
+              <span>Women of color are present with depth, not token</span>
+            </label>
+
+            <label class="tool-check">
+              <input type="checkbox" id="bpLgbtqDepth">
+              <span>LGBTQ plus characters are treated as full people, not jokes or props</span>
+            </label>
+
+            <label class="tool-check">
+              <input type="checkbox" id="bpNoStereotypes">
+              <span>Characterization avoids lazy gender stereotypes</span>
+            </label>
+          </div>
+
+          <div class="tool-meter">
+            <div class="tool-meter-top">
+              <div>
+                <div class="meter-title">Representation depth</div>
+                <div class="meter-sub">How much interiority and complexity do women characters get</div>
+              </div>
+              <div class="meter-badge">
+                <span id="bpDepthValue">3</span><span class="meter-slash">/</span><span>5</span>
+              </div>
+            </div>
+
+            <input
+              id="bpDepth"
+              class="tool-range"
+              type="range"
+              min="1"
+              max="5"
+              value="3"
+              step="1"
+            >
+
+            <div class="tool-range-labels">
+              <span>Thin</span>
+              <span>Mixed</span>
+              <span>Rich</span>
+            </div>
+          </div>
+
+          <div class="tool-actions">
+            <button class="btn btn-secondary btn-block" id="runBechdelPlusBtn" type="button">
+              <i class="fas fa-plus"></i> Run Bechdel Plus
+            </button>
+          </div>
+
+          <div class="tool-result" id="bechdelPlusOutput" style="display:none;"></div>
+
+         
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+    <section class="section" id="feminist-test">
+        <div class="container">
+            <div class="test-header fade-in">
+                <h2>Comprehensive Feminist Media Analysis</h2>
+                <p>
+                    This is the main tool for the project. It translates feminist theory into a structured scoring process,
+                    then generates strengths, risks, and concrete recommendations. It is designed to connect gaze analysis
+                    with the Man Box, because representation and masculinity norms often reinforce each other.
+                </p>
+            </div>
+
+            <div class="test-container">
+                <div class="test-progress">
+                    <div class="test-progress-bar" id="testProgress"></div>
+                </div>
+
+                <div id="testContent">
+                    <div class="test-start-screen">
+                        <h3>Before you begin</h3>
+                        <p>
+                            You will answer 40 questions across four categories, gaze and perspective, representation,
+                            gender dynamics and Man Box signals, intersectionality and power.
+                        </p>
+
+                        <div class="grid grid-2">
+                            <div class="category-overview">
+                                <h4><i class="fas fa-eye"></i> Gaze and Perspective</h4>
+                                <p>Camera framing, narrative viewpoint, who is treated as subject vs object</p>
+                            </div>
+                            <div class="category-overview">
+                                <h4><i class="fas fa-users"></i> Representation</h4>
+                                <p>Diversity, stereotypes, character depth, narrative importance</p>
+                            </div>
+                            <div class="category-overview">
+                                <h4><i class="fas fa-venus-mars"></i> Gender Dynamics and Man Box</h4>
+                                <p>Power relations, masculinity norms, emotional range, violence rewards</p>
+                            </div>
+                            <div class="category-overview">
+                                <h4><i class="fas fa-project-diagram"></i> Intersectionality and Power</h4>
+                                <p>Race, class, sexuality, disability, whose safety and voice are protected</p>
+                            </div>
+                        </div>
+
+                        <div class="media-selection">
+                            <h4>Media to analyze</h4>
+                            <div class="media-options">
+                                <input type="text" id="mediaTitle" placeholder="Enter title" class="input-large">
+                                <p></p>
+                                <select id="mediaType" class="input-large">
+                                    <option value="">Select media type</option>
+                                    <option value="film">Feature film</option>
+                                    <option value="tv">TV series</option>
+                                    <option value="game">Video game</option>
+                                    <option value="music">Music or music video</option>
+                                    <option value="social">Social media or influencer content</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button id="startTest" class="btn btn-primary btn-large">
+                            <i class="fas fa-play"></i> Begin analysis
+                        </button>
+                    </div>
+                </div>
+
+                <div class="test-navigation" style="display:none;" id="testNav">
+                    <button id="prevQuestion" class="btn btn-outline">
+                        <i class="fas fa-arrow-left"></i> Previous
+                    </button>
+                    <div class="question-counter">
+                        Question <span id="currentQuestion">1</span> of <span id="totalQuestions">40</span>
+                    </div>
+                    <button id="nextQuestion" class="btn btn-primary" disabled>
+                        Next <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section section-light" id="resultsSection" style="display:none;">
+        <div class="container">
+            <div class="result-container">
+                <div class="result-header">
+                    <h2>Results</h2>
+                    <p id="analyzedMedia">Analysis for, <span id="mediaName"></span></p>
+                </div>
+
+                <div class="result-score" id="overallScore">0%</div>
+
+                <div class="score-breakdown">
+                    <h3>Category scores</h3>
+                    <div class="result-categories">
+                        <div class="category-score">
+                            <div class="category-name">Gaze and Perspective</div>
+                            <div class="category-value" id="gazeScore">0%</div>
+                            <div class="progress-bar small">
+                                <div class="test-progress-bar" id="gazeBar"></div>
+                            </div>
+                        </div>
+
+                        <div class="category-score">
+                            <div class="category-name">Representation</div>
+                            <div class="category-value" id="representationScore">0%</div>
+                            <div class="progress-bar small">
+                                <div class="test-progress-bar" id="representationBar"></div>
+                            </div>
+                        </div>
+
+                        <div class="category-score">
+                            <div class="category-name">Gender Dynamics and Man Box</div>
+                            <div class="category-value" id="genderScore">0%</div>
+                            <div class="progress-bar small">
+                                <div class="test-progress-bar" id="genderBar"></div>
+                            </div>
+                        </div>
+
+                        <div class="category-score">
+                            <div class="category-name">Intersectionality and Power</div>
+                            <div class="category-value" id="intersectionalityScore">0%</div>
+                            <div class="progress-bar small">
+                                <div class="test-progress-bar" id="intersectionalityBar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="result-analysis">
+                    <h3>Interpretation</h3>
+                    <div id="strengthsList" class="analysis-section"></div>
+                    <div id="risksList" class="analysis-section"></div>
+                </div>
+
+                <div class="result-recommendations">
+                    <h3><i class="fas fa-lightbulb"></i> Praxis recommendations</h3>
+                    <div id="recommendationsList"></div>
+                </div>
+
+                <div class="result-actions">
+                    <button id="saveResults" class="btn btn-primary">
+                        <i class="fas fa-save"></i> Save
+                    </button>
+                    <button id="resetTest" class="btn btn-secondary">
+                        <i class="fas fa-rotate-left"></i> New analysis
+                    </button>
+                </div>
+            </div>
+
+            <div class="test-history" id="testHistory" style="display:none;">
+                <h3>Your recent analyses</h3>
+                <div class="history-list" id="historyList"></div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <p>© 2025 Unboxing Pop Culture, created for academic purposes at the University of Wisconsin Green Bay.</p>
+            <p>Media references and poster placeholders are used for critique and educational analysis.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/tests.js"></script>
+
+</body>
+</html>
