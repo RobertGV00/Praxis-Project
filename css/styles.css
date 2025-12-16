@@ -239,7 +239,7 @@ p {
   height: 46px;
   border-radius: 14px;
   border: 1px solid rgba(0,0,0,0.12);
-  background: rgba(0,0,0,0.04);
+  background: rgba(0, 0, 0, 0.699);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -852,3 +852,4 @@ body.dark-theme #bechdel-suite .tool-result{
   border:1px solid rgba(255,255,255,0.14) !important;
   color:rgba(255,255,255,0.88) !important;
 }
+
